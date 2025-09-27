@@ -14,34 +14,29 @@
                 <div class="title">
                     <h2 class="title-name">Product</h2>
                 </div>
-                <div class="product-details">
+                <div *ngFor="let product of productdetails" class="product-details">
                     <div class="title"> 
-                        <h3>Picture Frame</h3>
+                        <h3>{{ product.productName }}</h3>
                     </div>
                     <div class="item">
-                        <span *ngFor="let productdetail of productdetails">
-                            <a href="#" (click)="onProductClick(productdetail)">
-                                <img [src]="'assets/image/picture-frames/' + productdetail.imageURL" alt="Picture Frame">
+                        <span *ngFor="let productdetail of product.products">
+                            <a href="#" (click)="onProductClick(productdetailmodel, productdetail)">
+                                <img [src]="productdetail.imageURL" [alt]="productdetail.imageName">
                             </a>
                         </span>
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="title"> 
-                        <h3>Cup</h3>
-                    </div>
-                    <div class="item">
-                        <img src="assets\image\picture-frames\picture_frame-1.jpg">
-                        <img src="assets\image\picture-frames\picture_frame-2.jpg">
-                        <img src="assets\image\picture-frames\picture_frame-3.jpg">
-                        <img src="assets\image\picture-frames\picture_frame-4.jpg">
-                        <img src="assets\image\picture-frames\picture_frame-5.jpg">
-                        <img src="assets\image\picture-frames\picture_frame-6.jpg">
-                        <img src="assets\image\picture-frames\picture_frame-7.jpg">
-                        <img src="assets\image\picture-frames\picture_frame-8.jpg">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<ng-template #productdetailmodel let-modal>
+    <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            &times;
+        </button>
+    </div>
+    <div class="modal-body">
+        <img [src]="product?.imageURL" [alt]="product?.imageName" />
+    </div>
+</ng-template>

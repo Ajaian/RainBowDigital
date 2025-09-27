@@ -12,3 +12,23 @@ body{
     font-weight: 300;
     font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
+.custom-modal .modal-dialog {
+  width: 1200px !important;
+  max-width: 1200px !important;
+}
+
+.custom-modal .modal-content {
+  height: 600px ;
+  border-radius: 12px;
+}
+.custom-modal .modal-body {
+  max-height: 600px;   
+  overflow-y: auto;    
+  text-align: center;  
+}
+.custom-modal .modal-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { productDetails } from '../services/details.constants';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { ProductDetail, productDetails, Product } from '../services/details.constants';
 import { CommonModule } from '@angular/common';
-import { ProductDetailsComponent } from '../shared/product-details/product-details.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -11,17 +10,19 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './components.component.html',
-  styleUrl: './components.component.css'
+  styleUrl: './components.component.css',
+  providers: [NgbActiveModal]
 })
 export class ComponentsComponent implements OnInit {
-  productdetails: any[] = [];
-  constructor(private http: HttpClient,  private modalService: NgbModal) {  }
+  productdetails: ProductDetail[] = [];
+  product: Product | null = null;
+  constructor(private http: HttpClient,  private modalService: NgbModal, public activeModal: NgbActiveModal) {  }
 
   ngOnInit() {
     this.productdetails = productDetails;
   }
-  onProductClick(product: any) {
-    const modalReference = this.modalService.open(ProductDetailsComponent, { size: 'lg' });
-    modalReference.componentInstance.product = product;
+  onProductClick(content: any, products: Product) {
+    this.modalService.open(content, {windowClass: 'custom-modal', centered: true, size: 'lg', backdrop: 'static'});
+    this.product = products;
   }
 }

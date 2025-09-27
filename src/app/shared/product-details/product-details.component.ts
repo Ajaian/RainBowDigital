@@ -9,6 +9,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
 ngOnInit(){
-  debugger;
 }
 }

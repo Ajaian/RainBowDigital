@@ -18,7 +18,6 @@ export class ComponentsComponent implements OnInit {
   constructor(private http: HttpClient,  private modalService: NgbModal) {  }
 
   ngOnInit() {
-    debugger;
     this.productdetails = productDetails;
   }
   onProductClick(product: any) {

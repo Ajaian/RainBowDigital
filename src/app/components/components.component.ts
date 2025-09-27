@@ -22,8 +22,7 @@ export class ComponentsComponent implements OnInit {
     this.productdetails = productDetails;
   }
   onProductClick(product: any) {
-    debugger;
     const modalReference = this.modalService.open(ProductDetailsComponent, { size: 'lg' });
-    modalReference.componentInstance.product = product; // Pass the product data to the modal
+    modalReference.componentInstance.product = product;
   }
 }

@@ -1,0 +1,18 @@
+<div class="main">
+    <div class="top-content" style="background-image: url('assets/image/top_image.jpg')">
+        <div class="admin-login-container">
+        <h1>Admin Login</h1>
+            <!-- <form (ngSubmit)="onSubmit()"> -->
+            <div class="admin-login-username">
+                <label for="username">Username</label>
+                <input id="username" type="text" [(ngModel)]="username" name="username" />
+            </div>
+            <div class="admin-login-password">
+                <label for="password">Password</label>
+                <input id="password" type="password" [(ngModel)]="password" name="password" />
+            </div>
+            <button type="button" (click)="onSubmit()">Login</button>
+        <!-- </form> -->
+        </div>
+    </div>
+</div>

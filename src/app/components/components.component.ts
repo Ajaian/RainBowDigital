@@ -3,12 +3,14 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ProductDetail, productDetails, Product } from '../services/details.constants';
 import { CommonModule } from '@angular/common';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from "../shared/header/header.component";
+import { FooterComponent } from "../shared/footer/footer.component";
 
 
 @Component({
   selector: 'app-components',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './components.component.html',
   styleUrl: './components.component.css',
   providers: [NgbActiveModal]

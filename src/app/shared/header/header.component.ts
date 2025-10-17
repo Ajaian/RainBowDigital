@@ -11,15 +11,14 @@ export class HeaderComponent implements OnInit {
   isTransparent:boolean = true;
   constructor(private renderer : Renderer2) { }
 
-  ngOnInit() {
-    const navbarElement = document.querySelector('.navbar') as HTMLElement;
-    this.renderer.listen('window', 'scroll', (event) => {
-      const number = window.scrollY;
-      if (number > 150 || window.pageYOffset > 150) {
-          this.isTransparent=false;
-      } else {
-          this.isTransparent=true;
-      }
+   ngOnInit() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+    const navbarElement = document.querySelector('.navbar') as HTMLElement | null;
+    this.renderer.listen(window, 'scroll', () => {
+      const number = window.scrollY || window.pageYOffset || 0;
+      this.isTransparent = !(number > 150);
     });
   }
 

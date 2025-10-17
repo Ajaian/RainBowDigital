@@ -24,13 +24,15 @@
     }
 }
 .navbar {
-    background: #fff;
+    background-color: #fff;
     padding: 0px;
-  }
+    color: #fff;
+}
   .navbar-transparent {
     background: 0 0 !important;
     border-bottom: 1px solid transparent;
     box-shadow: none;
+    border:none !important;
 }
 .fixed-top {
     position: fixed;
@@ -38,6 +40,7 @@
     right: 0;
     left: 0;
     z-index: 1030;
+    border: 1px solid black;  
 }
   .container{
     display: flex;

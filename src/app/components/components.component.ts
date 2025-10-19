@@ -27,4 +27,8 @@ export class ComponentsComponent implements OnInit {
     this.modalService.open(content, {windowClass: 'custom-modal', centered: true, size: 'lg', backdrop: 'static'});
     this.product = products;
   }
+  addProduct() {
+    // Logic to add a new product
+    alert('Add Product functionality to be implemented.');
+  }
 }

@@ -1,0 +1,27 @@
+<div class="main-content">
+        <div class="section">
+            <div class="container">
+                <div class="product-title">
+                    <h2 class="title-name">Product</h2>
+                    <button class="add-product" (click)="addProduct()">Add Product</button>
+                </div>
+                <div *ngFor="let product of productdetails" class="product-details">
+                    <div class="product-title"> 
+                        <h3 class="product-productName">{{ product.productName }} ({{product.products.length}})</h3>
+                        <div>
+                            <button class="add" (click)="addProduct()">Add</button>
+                            <button class="viewMore" (click)="addProduct()">View More</button>
+                        </div>
+                    </div>
+                    <ul class="item">
+                        <li *ngFor="let productdetail of product.products.slice(0, 5)">
+                            <div class="iteam-detail">
+                                <img [src]="productdetail.imageURL" [alt]="productdetail.imageName">
+                                <div class="image-name">{{ productdetail.imageName }}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

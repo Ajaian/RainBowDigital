@@ -14,17 +14,14 @@ import { Router } from '@angular/router';
 export class AdminloginComponent {
     username = '';
     password = '';
-    adminUser:boolean = false;
-  constructor(private router: Router) {}
+    constructor(private router: Router) {}
 
-  onSubmit() {
-    // placeholder: in a real app you'd call a service
-    if (this.username === 'admin' && this.password === 'admin') {
-      this.adminUser = true;
-      // navigate to the 'common' model — current root route shows ComponentsComponent
-      this.router.navigate(['/']);
-    } else {
-      alert('Invalid credentials (demo)');
+    onSubmit() {
+      if (this.username === 'admin' && this.password === 'admin') {
+        sessionStorage.setItem('adminUser', 'true');
+        this.router.navigate(['/adminpage']);
+      } else {
+        alert('Invalid credentials (demo)');
+      }
     }
-  }
 }

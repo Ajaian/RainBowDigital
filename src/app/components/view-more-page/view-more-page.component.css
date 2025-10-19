@@ -1,0 +1,53 @@
+.main {
+    margin-top: 70px;
+}
+.main-view-more {
+    padding: 50px 0 0 0;
+    margin-left: 20px;
+}
+.back-button {
+    text-decoration: none;
+    color: #3524ce;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: inline-block; 
+}
+.product-heading{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.product-details{
+    margin-left: 20px;
+}
+.product-details .item{
+    margin-left: 10px;
+}
+.product-details ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.product-details ul li{
+    height: 500px;
+    width: 290px;
+    padding: 15px;
+    float: left;
+    margin: 1px;
+}
+.product-details ul li img{
+    height: 400px;
+    width: 215px;
+}
+.iteam-detail {
+    text-decoration: none;
+}
+.image-name{
+    height: 50px;
+    width: 215px;
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+}

@@ -64,6 +64,9 @@ h3 {
     height: 400px;
     width: 215px;
 }
+.iteam-detail {
+    text-decoration: none;
+}
 .image-name{
     height: 50px;
     width: 215px;
@@ -80,4 +83,5 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     float: right;
+    text-decoration: none;
 }

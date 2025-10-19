@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [isHomePage]="homePage"></app-header>
 <div class="main">
     <div class="top-content" style="background-image: url('assets/image/top_image.jpg')">
         <div class="content-center">
@@ -18,11 +18,11 @@
                 <div *ngFor="let product of productdetails" class="product-details">
                     <div class="product-title"> 
                         <h3 class="product-productName">{{ product.productName }} ({{product.products.length}})</h3>
-                        <button class="viewMore" (click)="addProduct()">View More</button>
+                        <a href="javascript::" class="viewMore" (click)="viewMore(product.products)">View More</a>
                     </div>
                     <ul class="item">
                         <li *ngFor="let productdetail of product.products.slice(0, 5)">
-                            <a href="#" class="iteam-detail" (click)="onProductClick(productdetailmodel, productdetail)">
+                            <a href="javascript::" class="iteam-detail" (click)="onProductClick(productdetailmodel, productdetail)">
                                 <img [src]="productdetail.imageURL" [alt]="productdetail.imageName">
                                 <div class="image-name">{{ productdetail.imageName }}</div>
                             </a>
@@ -33,7 +33,6 @@
         </div>
     </div>
 </div>
-<app-footer></app-footer>
 <ng-template #productdetailmodel let-modal>
     <div class="modal-header">
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">

@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="main">
+    <div class="main-view-more">
+        <a [routerLink]="['/']" class="back-button">
+            <img src="assets/image/arrow-left.png" alt="Back" style="height:18px;vertical-align:middle;margin-right:6px;">
+            Back To Home
+        </a>
+        <h1 class="product-heading">Cup</h1>
+        <div class="product-details">
+            <ul class="item">
+                <li *ngFor="let productdetail of products">
+                    <a href="javascript::" class="iteam-detail" (click)="onProductClick( productdetail)">
+                        <img [src]="productdetail.imageURL" [alt]="productdetail.imageName">
+                        <div class="image-name">{{ productdetail.imageName }}</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>     
+</div>
